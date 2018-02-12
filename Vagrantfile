@@ -2,16 +2,16 @@
 # vi: set ft=ruby :
 
 $installscript = <<SCRIPT
-echo Copying default site config /var/www/000-default.conf => /etc/apache2/sites-available/000-default.conf
+echo Copying default site config /var/www/000-default.conf to /etc/apache2/sites-available/000-default.conf
 cp /var/www/000-default.conf /etc/apache2/sites-available/
 
-echo default: Making new www directory in /var/www/public/www
+echo Making new www directory in /var/www/public/www
 mkdir /var/www/public/www
 
-echo default: Making new directory for site data in /var/www/public/sitedata
+echo Making new directory for site data in /var/www/public/sitedata
 mkdir /var/www/public/sitedata
 
-echo default: Reloading Apache2
+echo Reloading Apache2
 service apache2 reload
 SCRIPT
 
