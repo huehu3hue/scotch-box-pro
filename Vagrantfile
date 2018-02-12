@@ -8,9 +8,6 @@ cp /var/www/000-default.conf /etc/apache2/sites-available/
 echo Making new www directory in /var/www/public/www
 mkdir /var/www/public/www
 
-echo Making new directory for site data in /var/www/public/sitedata
-mkdir /var/www/public/sitedata
-
 echo Reloading Apache2
 service apache2 reload
 SCRIPT
