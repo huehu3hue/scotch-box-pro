@@ -32,6 +32,9 @@ SCRIPT
 
 Vagrant.configure("2") do |config|
 
+    config.vm.provider :virtualbox do |vb|
+        vb.customize ["modifyvm", :id, "--cpus", "2"]
+    end
     config.vm.box = "scotch/box-pro"
     config.vm.hostname = "scotchbox"
     config.vm.network "forwarded_port", guest: 80, host: 8080
