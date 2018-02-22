@@ -26,7 +26,7 @@ if [ ! -d "/var/www/public/www" ]; then
     mkdir /var/www/public/www
 fi
 
-if [ ! -z $(which htop) ]; then
+if [ -z $(which htop) ]; then
     echo Installing htop
     apt-get install htop
 fi
