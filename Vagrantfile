@@ -31,6 +31,9 @@ if [ -z $(which htop) ]; then
     apt-get install htop
 fi
 
+echo Setting timezone to Pacific/Auckland
+timedatectl set-timezone Pacific/Auckland
+
 echo Reloading Apache2
 service apache2 reload
 SCRIPT
