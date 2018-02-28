@@ -59,6 +59,7 @@ Vagrant.configure("2") do |config|
 
     # Copy host gitconfig and ssh.
     config.vm.provision "file", source: "~/.gitconfig", destination: "~/.gitconfig"
+    config.vm.provision "file", source: "~/.gitignore", destination: "~/.gitignore"
     config.vm.provision "file", source: "~/.ssh", destination: "~/.ssh"
 
     config.vm.provision "shell", inline: $installscript, privileged: true
