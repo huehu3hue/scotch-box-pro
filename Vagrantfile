@@ -11,7 +11,7 @@ fi
 
 if [ ! -f "/var/www/.provisioned_phpini" ]; then
     echo Copying php.ini file with 1024M upload_max_filesize and post_max_size.
-    cp /var/www/php.ini /etc/php/7.0/apache2/
+    cp /var/www/php.apache.ini /etc/php/7.0/apache2/php.ini
     touch /var/www/.provisioned_phpini
 fi
 
@@ -32,6 +32,12 @@ fi
 if [ ! -d "/var/www/public/www" ]; then
     echo Making new www directory in /var/www/public/www
     mkdir /var/www/public/www
+fi
+
+if [ ! -f "/var/www/.provisioned_phpcliini" ]; then
+    echo Ensuring that PHP CLI uses mhsendmail
+    cp /var/www/php.cli.ini /etc/php/7.0/cli/php.ini
+    touch /var/www/.provisioned_phpcliini
 fi
 
 if [ -z $(which htop) ]; then
