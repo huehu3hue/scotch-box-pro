@@ -1,10 +1,12 @@
 function pluginupdater_addmodified() {
 	pluginupdater_setup
+    cd /var/www/public/www
 	php /home/vagrant/scripts/moodle-pluginupdater/addmodified.php
 }
 
 function pluginupdater_adduntracked() {
 	pluginupdater_setup
+    cd /var/www/public/www
 	php /home/vagrant/scripts/moodle-pluginupdater/adduntracked.php
 }
 
